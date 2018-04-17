@@ -55,7 +55,7 @@ add_action( 'widgets_init', 'drtech_register_widgets' );
 
 // SECONDARY NAV
 function sawtooth_side_nav() {
-
+	$string = '';
 	global $post;
 	$current = get_the_title();
   $link = get_the_permalink($post->ID);

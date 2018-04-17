@@ -154,6 +154,6 @@ add_filter( 'init', 'my_custom_sizes' );
 
 function my_custom_sizes() {
 
-add_image_size( 'product-grid', 500, 420, true );
+add_image_size( 'product-grid', 500, 380, true );
 
 }
