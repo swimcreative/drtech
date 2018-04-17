@@ -1,0 +1,97 @@
+
+//DYNAMIC WIDGET
+.dynamic-block {
+  @include clearfix;
+
+  .hentry {
+    list-style: none;
+    background-color: white;
+  }
+
+  .dynamic-block-item-text {
+    @include margin(1em null);
+  }
+
+  .entry-header {
+    text-align: left;
+    display: block;
+    margin: 0;
+  }
+
+  .entry-title {
+    @extend .h5;
+    color:$dark-gray;
+    @include margin(0 0 15px);
+  }
+  .entry-meta {
+    font-size:.7em;
+    color:#bbb;
+    margin-bottom:20px;
+  }
+  .entry-date {
+    color: $medium-gray;
+    @include font-size(.875);
+    &:before {
+      content:"\f307";
+      font-size:1.1em;
+      position:relative;
+      top:3px;
+      font-family:genericons;
+      padding-right:5px;
+    }
+      display:inline-block;
+  }
+  .entry-comment-number {
+    &:before {
+      position:relative;
+      top:1px;
+      content:"\f300";
+      font-family:genericons;
+      padding-right:5px;
+    }
+  }
+}
+
+//POST Grid
+
+.dynamic-block-grid {
+  .dynamic-block-row {
+    @extend .row;
+  }
+}
+
+//ITEM widths
+*[class*='dynamic-block-col-'] {
+  @extend .col;
+}
+
+.dynamic-block-col-1 {
+  @extend .col-12;
+}
+
+.dynamic-block-col-2 {
+  @extend .col-6;
+}
+
+.dynamic-block-col-3 {
+  @extend .col-4;
+}
+
+.dynamic-block-col-4 {
+  @extend .col-3;
+}
+
+.dynamic-block-col-2,
+.dynamic-block-col-3 {
+  &:only-child {
+  }
+}
+
+//dynamic carousel
+.dynamic-block-carousel {
+  @include margin(null -10px);
+
+  .dynamic-block-item {
+    margin: 0;
+  }
+}

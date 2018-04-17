@@ -1,0 +1,24 @@
+.search-toggle {
+  /* hover toggle search form */
+  @media #{$tablet-up} {
+    position: relative;
+
+    input {
+      display: none !important;
+      position: absolute;
+      width: auto !important;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid $dark-gray !important;
+      box-shadow:none !important;
+      appearance:none !important;
+    }
+
+    &:hover input,
+    input:focus {
+       display: block !important;
+       min-width:280px;
+    }
+  }
+}

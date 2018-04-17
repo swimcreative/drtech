@@ -1,0 +1,26 @@
+//CALENDAR
+.widget_calendar {
+	table {
+		margin-bottom: 0;
+
+		& > caption {
+			caption-side: top;
+		}
+
+		th,
+		td {
+			text-align: center;
+			padding: .5rem .125rem;
+		}
+
+		& > tfoot  > tr > td {
+			border: none;
+			&:first-child {
+				text-align: left;
+			}
+			&:last-child {
+				text-align: right;
+			}
+		}
+	}//table
+}//.widget_calendar

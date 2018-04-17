@@ -1,0 +1,30 @@
+.alignleft {
+	float: left;
+	display: inline;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	float: right;
+	display: inline;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	@include margin($base-spacing auto $small-spacing);
+	display: block;
+	clear: both;
+}
+
+//CUSTOM ALIGNMENT CLASSES
+.pull-left {
+	@media #{$desktop} {
+		margin-left: -$base-spacing * 2.75;
+	}
+}
+
+.pull-right {
+	@media #{$desktop} {
+		margin-right: -$base-spacing * 2.75;
+	}
+}

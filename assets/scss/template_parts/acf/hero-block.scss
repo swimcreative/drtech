@@ -1,0 +1,139 @@
+.hero_block {
+  @include font-size(1.625);
+  &.bkgd_img {
+    color: white;
+    position: relative;
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0,0,0,.5);
+    }
+  }
+  h1,
+  h2 {
+    margin-bottom: 0;
+    line-height: .9;
+    small {
+      color: inherit;
+      font-size: 50%;
+      font-weight: 300;
+    }
+  }
+  h1 {
+    @include font-size(4);
+  }
+  h2 {
+    @include font-size(3.875);
+  }
+
+}
+
+//slide controls
+.has-slider {
+  .flickity-nav-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+  }
+
+  .flickity-prev-next-button {
+
+      .arrow {
+        fill: $light-gray;
+      }
+
+      &:hover .arrow {
+        fill: $accent-color;
+      }
+  }
+
+  .flickity-page-dots {
+      margin-top: -10px;
+      .dot {
+        background-color: $light-gray;
+
+        &.is-selected {
+          background-color: $accent-color;
+        }
+      }
+  }
+}
+
+//full wider slider
+.block_fullwidth.has-slider {
+  .block-inner,
+  .block-inner > .row,
+  .block-inner > .row > .block-content {
+    margin:0;
+    padding:0;
+    max-width: 100%;
+  }
+}
+
+//slide items
+.hero-slider-item {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-size: cover;
+
+  .block_size_sm & {
+    min-height: 240px;
+    @media (min-height: 720px) {
+      min-height: 25vh;
+    }
+    @media #{$mobile} {
+      min-height: 25vh;
+    }
+  }
+
+.block_size_md & {
+  min-height: 360px;
+  @media (min-height: 720px) {
+    min-height: 50vh;
+  }
+  @media #{$mobile} {
+    min-height: 50vh;
+  }
+}
+
+.block_size_lg & {
+  min-height: 540px;
+  @media (min-height: 720px) {
+    min-height: 75vh;
+  }
+  @media #{$mobile} {
+    min-height: 75vh;
+  }
+}
+
+.block_size_full & {
+  min-height: 720px;
+  @media (min-height: 720px) {
+    min-height: 100vh;
+  }
+  @media #{$mobile} {
+    min-height: 100vh;
+  }
+}
+
+}//slide item
+
+//slide content
+.slide-content {
+  @extend .col,
+          .col-10;
+  @include margin(20px null);
+
+  .block_fullwidth & {
+    @extend .col-8;
+  }
+}

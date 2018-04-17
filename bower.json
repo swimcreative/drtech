@@ -1,0 +1,34 @@
+{
+  "name": "wpgulp",
+  "description": "Gulp with WordPress. Start using Gulp with your WordPress plugins and themes.",
+  "main": "gulpfile.js",
+  "authors": [
+    "ahmadawais <me@ahmadawais.com> (http://ahmadawais.com)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "WPGulp",
+    "wordpress",
+    "gulp",
+    "js",
+    "wp",
+    "gulp wp"
+  ],
+  "homepage": "https://github.com/ahmadawais/WPGulp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmadawais/WPGulp.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "v5.0.0.beta.7",
+    "neat": "^2.0.0",
+    "bitters": "^1.5.0"
+  }
+}

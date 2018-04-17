@@ -1,0 +1,126 @@
+//FUNCTIONS
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+//MIXINS
+// Rem output with px fallback
+@mixin font-size($size-value: 1) {
+	font-size: ($size-value * strip-units($base-font-size)) * 1px;
+	font-size: $size-value * 1rem;
+}
+
+@mixin container {
+  @include margin(null auto);
+  @include padding(null $small-spacing);
+
+  @media #{$tablet-up} {
+    max-width: $medium-screen;
+  }
+}
+
+//TEMP
+
+$spacing: 20px;
+
+@mixin outer {
+  //background: blue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  @include padding($spacing null);
+}
+
+@mixin inner {
+  //background: green;
+  flex: 0 1 100%;
+  @include margin(null auto);
+  padding: $spacing $spacing / 2;
+
+  @media #{$tablet} {
+    flex-basis: $medium-screen;
+    max-width: $medium-screen;
+    padding: $spacing * 1.5 $spacing * 2;
+  }
+
+  @media #{$desktop} {
+    flex-basis: $large-screen;
+    max-width: $large-screen;
+    padding: $spacing * 2 $spacing * 3;
+  }
+}
+
+@mixin contents {
+  //background: red;
+  @include margin(null auto);
+  @include padding(1px null);
+  position: relative;
+
+  //smaller widget for readability
+  @media #{$desktop} {
+    //width: 83.3333%;
+  }
+}
+
+
+// Responsive pad
+$base-measure: 8rem; // medium size
+$small: $base-measure / 2;
+$medium: $base-measure;
+$large: $base-measure * 2;
+
+@mixin pad($value: $medium) {
+  @media #{$tablet-up} {
+    @include padding($value / 1.75 null);
+    @media (min-height:800px) {
+      @include padding($value null);
+    }
+  }
+  @include padding($value / 2 null);
+}
+
+@mixin caret {
+  &:after {
+    content:'';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 6px 0 6px;
+    border-color: $accent-color transparent transparent transparent;
+    display:inline-block;
+    margin-left:$base-spacing / 2;
+    vertical-align:middle;
+  }
+}
+
+@mixin text_shadow {
+  text-shadow:0px 0px 15px rgba(0,0,0,.2);
+}
+
+@mixin widths {
+  @media #{$hd} {
+    width:25%;
+    flex-basis:25%;
+  }
+  @media #{$desktop} {
+    width:calc(100% / 3);
+    flex-basis:calc(100% / 3);
+  }
+  @media #{$mobile} {
+    width:50%;
+    flex-basis:50%;
+  }
+  @media #{$xs} {
+    width:100%;
+    flex-basis:100%;
+  }
+}

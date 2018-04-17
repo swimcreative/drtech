@@ -1,0 +1,77 @@
+.site-footer {
+  > .container {
+    @include pad($small);
+    @include clearfix;
+  }
+  color:white;
+  padding-bottom:0;
+  //border-top: $base-border;
+  @include font-size(.875);
+  background:$dark-gray;
+  border-top:10px solid $blue;
+  a {
+    color:white;
+    &:hover {
+      color:$blue;
+    }
+  }
+  //back to top link
+  .top-link {
+    @include padding($base-spacing null);
+    float: right;
+  }
+
+  .footer-bottom {
+    font-size:.7rem;
+    letter-spacing:.01em;
+    .container {
+      text-align:center;
+      margin-top:15px;
+    }
+    ul {
+      @include clearfix;
+      @media #{$tablet-up} {
+        margin:0 auto;
+        display:inline-block;
+      }
+      display:block;
+      padding-left:0;
+    }
+    background:darken($dark-gray, 20%);
+    @include pad($small);
+    li {
+      text-transform:uppercase;
+      &:not(:last-of-type) {
+        &:after {
+          content:'';
+          height:10px;
+          width:1px;
+          background:White;
+          display:block;
+          display:inline-block;
+          position:relative;
+          margin-left:9px;
+          top:1px;
+        }
+      }
+      float:left;
+      list-style-type:none;
+      margin:0 5px;
+      @media #{$mobile} {
+        margin-left:0;
+        text-align:left;
+        float:none;
+        margin-bottom:.3em;
+        &:after {
+          content:none !important;
+        }
+      }
+    }
+  }
+
+}
+
+@import "site-contact";
+@import "site-info";
+@import "site-social";
+@import "site-morefoot";

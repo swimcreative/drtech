@@ -1,0 +1,47 @@
+#overview-grid {
+  background-color:#efefef;
+  background-image:url('assets/img/dot-bg.jpg');
+  @include pad($small);
+  .item-wrapper {
+    @include clearfix;
+    margin-left:-30px;
+    margin-right:-30px;
+  }
+  .item {
+    .btn {
+      margin-top:10px;
+      display:inline-block;
+      &:hover {
+        color:white;
+      }
+    }
+    img {
+      border-radius:0;
+      border:8px solid #ccc;
+    }
+    a {
+      color:$dark-gray;
+      font-weight:900;
+      &:first-child {
+        transition:opacity .3s;
+      }
+    }
+    &:hover {
+      > a:first-child {
+        opacity:.8;
+      }
+    }
+    h5 {
+      margin-top:.6em;
+      font-weight:800;
+      font-size:1em;
+    }
+    float:left;
+    @include widths;
+    padding:30px;
+    img, a  {
+      clear:both;
+      display:block;
+    }
+  }
+}

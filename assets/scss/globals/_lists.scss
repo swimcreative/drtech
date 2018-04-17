@@ -1,0 +1,36 @@
+ul,
+ol {
+  margin: 0;
+  padding: 0 0 0 $base-spacing;
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 600;
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+//wp menus
+.menu {
+  &,
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: block;
+  }
+  .current_page_item,
+  .current_page_ancestor {
+    > a {
+    color: $dark-gray;
+    }
+  }
+}

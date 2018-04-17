@@ -1,0 +1,270 @@
+//reset containers
+.page-builder {
+  .site-content,
+  .content-area {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+//visual base block layout
+.block {
+  //background-color: blue;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.block-inner { //container
+  //background-color: green;
+  .row {
+    //align-items: center;
+    //justify-content: center;
+  }
+}
+
+.block-content {
+  @extend .col;
+  //background-color: red;
+  position: relative;
+  z-index: 1;
+  @include margin(20px null);
+}
+
+//content width
+.block-content {
+  @extend .col-8;
+
+  .block_normal & {
+    @extend .col-8;
+  }
+
+  .block_wide & {
+    @extend .col-12;
+  }
+}
+
+.block_fullwidth {
+  .block-inner {
+    max-width: none !important;
+  }
+
+  .block-content {
+    @extend .col-12;
+  }
+}
+
+//block heights
+  .block_size_md {
+    min-height: 360px;
+    @media (min-height: 720px) {
+      min-height: 50vh;
+    }
+    @media #{$mobile} {
+      min-height: 50vh;
+    }
+  }
+
+  .block_size_lg {
+    min-height: 540px;
+    @media (min-height: 720px) {
+      min-height: 75vh;
+    }
+    @media #{$mobile} {
+      min-height: 75vh;
+    }
+  }
+
+  .block_size_full {
+    min-height: 720px;
+    @media (min-height: 720px) {
+      min-height: 100vh;
+    }
+    @media #{$mobile} {
+      min-height: 100vh;
+    }
+  }
+
+
+//Basic background image
+
+.bkgd_normal,
+.bkgd_tiled,
+.bkgd_fixed {
+  background-position: center center;
+}
+
+.bkgd_normal,
+.bkgd_fixed {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bkgd_fixed {
+  background-attachment: fixed;
+}
+
+.bkgd_tiled {
+  background-repeat: repeat;
+}
+
+//BACKGROUND VIDEO
+.video-background {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+  color: white;
+
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,.25);
+  }
+
+  .block-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  > video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: scale(1.125) translate(-50%,-50%); //need to scale up slightly to cover parent container
+    max-width: none;
+
+    &.max-width { //refer to main.js for aspect ratio class assignment
+      width: 100%;
+      height: auto;
+    }
+
+    &.max-height {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+//CAROUSEL
+.flickity-nav-wrapper {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    margin: 20px 0 0 0;
+}
+
+.flickity-prev-next-button,
+.flickity-page-dots {
+    position: static;
+    margin: 0;
+    padding: 0;
+    display: block;
+    flex: 0 0 auto;
+}
+
+.flickity-prev-next-button {
+    background-color: transparent !important;
+    transform: translateY(0);
+
+    .arrow {
+      fill: $dark-gray;
+    }
+
+    &:hover .arrow {
+      fill: $action-color;
+    }
+}
+
+.flickity-prev-next-button.next {
+    order:1;
+}
+
+.flickity-page-dots {
+    width: auto;
+
+    .dot {
+      background-color: $dark-gray;
+      opacity: 1;
+      padding: 0 !important;
+
+      &.is-selected {
+        background-color: $action-color;
+      }
+    }
+}
+
+//Parallax TODO:rework
+
+.parallax-background {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.drtech-parallax {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .block-inner {
+    z-index: 9;
+  }
+
+  .parallax-background {
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &.block_size_sm .parallax-background,
+  &.block_size_md .parallax-background {
+    min-height: 360px * 1.09375;
+    @media (min-height: 720px) {
+      min-height: 50vh * 1.09375;
+    }
+  }
+
+  &.block_size_lg .parallax-background {
+    min-height: 540px * 1.09375;
+    @media (min-height: 720px) {
+      min-height: 75vh * 1.09375;
+    }
+  }
+
+  &.block_size_full .parallax-background {
+    min-height: 720px * 1.09375;
+    @media (min-height: 720px) {
+      min-height: 100vh * 1.09375;
+    }
+  }
+
+  &[class*=block_size]:not(.block_size_md) .parallax-background {
+    @media #{$mobile} {
+      min-height: 480px * 1.09375;
+    }
+  }
+}
+
+
+//CUSTOM BLOCKS
+
+@import "hero-block";
+@import "dynamic-block";
+@import "media-block";
+@import "toggle-block";
+@import "map-block";

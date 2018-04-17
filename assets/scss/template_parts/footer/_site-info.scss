@@ -1,0 +1,18 @@
+.site-info {
+  @include padding($base-spacing null);
+  clear: both;
+  @media #{$tablet} {
+    text-align:left;
+  }
+}
+
+.legal {
+  margin-top: $small-spacing;
+  text-align:left;
+  display:block;
+  @media #{$tablet-up} {
+    margin-top: 0;
+    display:inline-block;
+    margin-left:1em;
+  }
+}

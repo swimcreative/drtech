@@ -1,0 +1,8 @@
+.custom-header {
+	position: relative;
+	@include clear-fix-after;
+
+	img {
+		width: 100%;
+	}
+}

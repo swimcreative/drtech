@@ -1,0 +1,65 @@
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 $base-spacing;
+		overflow: hidden;
+	}
+
+	.nav-links {
+		position: relative;
+    display: flex;
+	}
+
+	.nav-previous,
+	.nav-next {
+		@include font-size(.875);
+		line-height: 1;
+		flex: 1;
+		a {
+			display: block;
+		}
+	}//nav-*
+
+	.nav-previous {
+	  margin-right: $small-spacing;
+	}
+
+	.nav-next {
+		text-align: right;
+		margin-left: $small-spacing;
+		&:only-child {
+			margin-left: auto;
+		}
+	}
+}
+
+.post-navigation {
+
+	.nav-links {
+		position: relative;
+    display: flex;
+	}
+
+	.nav-previous,
+	.nav-next {
+		a:before {
+				color: $medium-gray;
+				display: block;
+				margin-bottom: .5em;
+		}
+	}//nav-*
+
+	.nav-previous {
+		a:before {
+			content: 'Previous';
+		}
+	}
+
+	.nav-next {
+		a:before {
+			content: 'Up Next';
+		}
+	}
+}

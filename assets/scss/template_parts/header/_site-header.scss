@@ -1,0 +1,231 @@
+.site-header {
+  position:relative;
+  z-index:9999;
+  @extend .container;
+  ul {
+    list-style-type:none;
+  }
+  .upper-header {
+    background:white;
+    display:flex;
+    @include clearfix;
+    .container {
+      padding:0;
+      display:flex;
+      flex-direction:row-reverse;
+      align-items:center;
+      .site-branding {
+        width:35%;
+        flex-basis:35%;
+        @media #{$tablet} {
+          width:45%;
+          flex-basis:45%;
+        }
+      }
+    }
+    .secondary-nav {
+      ul {
+        padding-left:0;
+        li {
+          vertical-align:middle;
+          font-size:.85rem;
+          &:not(:last-child):not(:nth-last-child(2)):not(:nth-last-child(3)) {
+            letter-spacing:-.04em;
+          }
+          &:not(:last-child):not(:nth-last-child(2)):not(:nth-last-child(3)):not(:nth-last-child(4)) {
+            margin-left:0;
+            &:after {
+              content: '|';
+              position:relative;
+              left:$base-spacing / 1.6;
+              color:$medium-gray;
+              font-weight:900;
+              opacity:.6;
+            }
+          }
+          a {
+            &:hover {
+              color:$blue;
+            }
+            &[href*='tel'] {
+              position:relative;
+              &:before {
+                content: "\f437";
+                font-family:genericons;
+                font-size:1.3rem;
+                position:absolute;
+                left:-25px;
+                top:50%;
+                transform:translateY(-50%);
+              }
+            }
+            color:#999999;
+            font-weight:900;
+          }
+          .btn {
+            color:$base-font-color;
+            &:hover {
+              color:white;
+              background:$blue;
+            }
+          }
+        }
+      }
+      width:60%;
+      flex-basis:60%;
+      @media #{$desktop-up} {
+        text-transform:uppercase;
+      ul li:last-child {
+        display:none;
+      }
+      width:85%;
+      flex-basis:85%;
+      text-align:right;
+      display:block;
+      li, .menu {
+        display:inline-block;
+        vertical-align:middle;
+        margin-left:$base-spacing;
+        }
+      }
+      .btn {
+        padding:$small-spacing $base-spacing;
+      }
+      @media #{$tablet} {
+        .btn {
+          @media #{$xs} {
+            font-size:.75rem;
+            padding:16px 13px;
+            min-width:1px;
+            position:relative;
+            top:0px;
+          }
+        }
+        text-align:right;
+        li {
+          display:none;
+        }
+        #site-search + li,
+        #site-search + li + li {
+          display:inline-block;
+          button {
+            margin:0 0 0 .25em;
+          }
+        }
+      }
+    }
+    .site-branding,
+    .secondary-nav {
+      vertical-align:middle;
+    }
+  }
+  .lower-header {
+    .container {
+      background:$light-gray;
+      padding:0;
+    }
+    clear:both;
+    .secondary-menu {
+      @media #{$desktop-up} {
+        display:none;
+      }
+    }
+    @media #{$desktop} {
+      > .container {
+        padding:0;
+      }
+    }
+  }
+  display:flex;
+  //background-color:$light-gray;
+  display:block;
+   > div {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    display:block;
+    @media #{$desktop-up} {
+      //border-bottom: $base-border;
+      }
+    @media #{$tablet} {
+      padding:0;
+    }
+  }
+  @media #{$tablet} {
+    //background:lighten($light-gray, 5%) !important;
+    .upper-header {
+      background:none;
+    }
+  }
+}
+
+.burger,
+.close {
+  position:relative;
+  top:-1px;
+  //transition:all .3s;
+  span {
+    position:relative;
+    top:0;
+    bottom:0;
+    //transitioN:all .3s;
+    &:first-child {
+      margin-top:0;
+    }
+    display:block;
+    height:2px;
+    background:white;
+    margin:10px 0;
+    width:40px;
+  }
+  &.toggled,
+  &.close {
+    z-index:999999;
+    top:-11px;
+    &:not(.close) {
+    span:nth-last-child(2) {
+      opacity:0;
+      }
+    }
+    span:first-child {
+      transform:rotate(45deg);
+      top:22px;
+
+    }
+    span:last-child {
+      transform:rotate(-45deg);
+      bottom:-22px;
+
+    }
+    &.close {
+      padding:11px;
+      margin-right:-11px;
+      margin-top:0;
+      span:first-child {
+        transform:rotate(45deg);
+        top:11px;
+
+      }
+      span:last-child {
+        transform:rotate(-45deg);
+        bottom:-11px;
+      }
+    }
+  }
+}
+
+//base order
+.custom-logo-link,
+.site-branding,
+.menu-toggle,
+.site-navigation,
+#site-search {
+    order: 1;
+}
+
+@import "site-branding";
+@import "site-navigation";
+@import "nav-fixed";
+@import "site-search";

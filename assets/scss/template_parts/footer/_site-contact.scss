@@ -1,0 +1,21 @@
+.site-contact {
+  @include padding($base-spacing null);
+  padding-top:0;
+
+  @media #{$tablet-up} {
+    float: left;
+    width: 50%;
+  }
+
+  .custom-logo-link {
+    margin: 0 0 $base-spacing;
+    filter:brightness(175%);
+  }
+
+  .footer-center & {
+    text-align: center;
+    float: none;
+    width: 100%;
+  }
+
+}//.site-contact

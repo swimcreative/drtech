@@ -1,0 +1,117 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  //height: 100%; TODO: Why is this here?
+}
+
+body {
+  background-color: $base-background-color;
+}
+
+.site {
+  overflow: hidden;
+}
+
+#secondary {
+  @media #{$tablet} {
+    margin-top:2em;
+  }
+}
+
+body:not(.page-builder) {
+  #primary {
+    @extend .col,
+            .col-8;
+    @include margin(null auto);
+    padding-right:$base-spacing * 3;
+  }
+  &:not(.page-template-fullwidth-page) {
+    #content > .container > .row {
+      align-items:flex-start;
+    }
+    #secondary {
+      width:100%;
+    }
+    #primary {
+      @media #{$mobile} {
+        padding-right:0;
+      }
+    }
+    @media #{$tablet-up} {
+    #primary {
+      margin-left:0;
+    }
+    #secondary {
+      width:calc(100% / 3);
+      max-width:350px;
+      }
+    }
+  }
+}
+
+.layout-sidebar:not(.page-builder) {
+  #secondary {
+    @extend .col,
+            .col-4;
+    @include margin(null auto);
+    @media #{$desktop} {
+      padding-left: 80px;
+    }
+  }
+}
+
+/*
+  .site-content {
+    @extend .container;
+    @extend .row;
+    justify-content: center;
+    @include padding(4em null);
+
+    .has-post-thumbnail & {
+      padding-top: 0;
+    }
+  }
+
+  .content-area,
+  .content-area + .widget-area {
+    @extend .col;
+  }
+
+  .content-area {
+      @extend .col-8;
+  }
+
+  .widget-area {
+    padding-top: 1.5em;
+  }
+
+  .content-area + .widget-area {
+      @extend .col-8;
+      .layout-sidebar & {
+        @extend .col-4;
+        @media #{$tablet-up} {
+          padding-left: 80px;
+        }
+      }
+  }
+
+  .blog,
+  .archive {
+    .widget-area {
+      padding-top: 0;
+    }
+  }
+
+*/
+
+
+//TODO: figure out xl screen layouts and typography

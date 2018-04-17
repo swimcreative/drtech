@@ -1,0 +1,53 @@
+//RSS
+.widget_rss {
+	.widget-title {
+		a {
+			color: inherit;
+			&:first-child {
+				&:before {
+					display: inline;
+					content: '\f413';
+					font-family: 'Genericons';
+					font-size: 90%;
+					position: relative;
+					top: 1px;
+				}
+				img {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+//widget post lists
+.widget_recent_entries,
+.widget_rss {
+	li {
+		@extend .entry-content;
+		@include font-size(.875);
+		margin:0 0 1em 0;
+
+		a { //entry-title
+			@include font-size(1);
+			//font-weight: bold;
+			display: block;
+		}
+
+		.post-date,
+		.rss-date,
+		cite {
+			@extend .entry-meta;
+			display: block;
+			margin: 0 0 .5rem !important;
+		}
+
+		cite {
+			&:before {
+				display: inline;
+				content: 'By: ';
+			}
+		}//cite
+
+	}//li
+}//.widget_*

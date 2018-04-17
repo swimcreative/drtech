@@ -1,0 +1,26 @@
+//NAV CENTER
+.nav-center {
+  .site-branding,
+  .site-header .custom-logo-link,
+  #site-search {
+      @media #{$tablet-up} {
+        position: absolute;
+      }
+  }
+
+  .site-description {
+      display: none !important;
+  }
+
+  #site-search {
+    @media #{$tablet-up} {
+        right: $small-spacing;
+    }
+  }
+
+  .site-navigation {
+    @media #{$tablet-up} {
+        @include margin(null auto);
+    }
+  }//.site-navigation
+}

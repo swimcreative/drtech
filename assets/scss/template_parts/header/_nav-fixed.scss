@@ -1,0 +1,46 @@
+//fixed header
+.fixed-header .site-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+
+    @media #{$tablet-up} {
+      position: fixed;
+    }
+
+
+      .custom-logo-link,
+      .site-title,
+      li > a,
+      #site-search .search-submit {
+        transition: all $base-duration * 2 $base-timing;
+      }
+
+      &.minimize {
+        //shadow?
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+        .custom-logo-link,
+        .site-title {
+          transform: scale(.75);
+          @include margin(($small-spacing * .333) $small-spacing);
+        }
+        li > a,
+        #site-search .search-submit {
+          @include padding($small-spacing);
+        }
+      }
+    //}
+}//fixed-header
+
+//admin-bar
+.admin-bar.fixed-header {
+  .site-header {
+    top: 32px;
+    @media (max-width: 782px) {
+      position: absolute !important;
+      top: 46px;
+    }
+  }
+}

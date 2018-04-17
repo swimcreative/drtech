@@ -1,0 +1,136 @@
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  @include margin($small-spacing null $small-spacing / 2);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+#{$all-text-inputs},
+select {
+  appearance: none;
+  background-color: $base-background-color;
+  border: $base-border;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 1.5;
+  transition: border-color $base-duration $base-timing;
+  width: 100%;
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($base-background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+
+  &::placeholder {
+    color: tint($base-font-color, 40%);
+  }
+
+  .ui-rounded & {
+    border-radius: $base-border-radius;
+  }
+
+  .ui-geometric & {
+    border-radius: $base-square-border-radius; //on purpose
+  }
+
+  .ui-square & {
+    border-radius: $base-square-border-radius;
+  }
+
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+input[type=submit],
+button[type=submit] {
+  @extend .btn;
+  width:auto !important;
+  padding:$base-spacing / 1.2 !important;
+}
+
+select {
+  margin-bottom: $small-spacing;
+	background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+	background-repeat: no-repeat;
+	background-position: 99% center;
+  padding:$base-spacing;
+  min-height:45px;
+}
+
+@-moz-document url-prefix() {
+  select {
+		background-image:none;
+  }
+}
+#page .gform_wrapper {
+  input {
+    width:100%;
+    padding:11px;
+    line-height:1;
+  }
+  li.gfield {
+    margin-bottom:1em;
+  }
+  .ginput_container_checkbox {
+    @include clearfix;
+    margin-bottom:30px;
+  }
+  input[type=checkbox],
+  input[type=radio] {
+    position:relative;
+    top:-.28em;
+    transform:scale(1.1);
+  }
+}

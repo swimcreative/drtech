@@ -1,0 +1,75 @@
+.map_block {
+  .acf-map {
+    width: 100%;
+    min-height: 480px;
+    //border: #ccc solid 1px;
+    //margin: 20px 0;
+  }
+//block heights
+&.block_size_md {
+  .acf-map {
+  min-height: 360px;
+  @media (min-height: 720px) {
+    min-height: 50vh;
+  }
+  }
+}
+
+&.block_size_lg {
+  .acf-map {
+  min-height: 540px;
+  @media (min-height: 720px) {
+    min-height: 75vh;
+  }
+  }
+}
+
+&.block_size_full {
+  .acf-map {
+  min-height: 720px;
+  @media (min-height: 720px) {
+    min-height: 100vh;
+  }
+  }
+}
+
+&[class*=block_size]:not(.block_size_md) {
+  .acf-map {
+  @media #{$mobile} {
+    min-height: 480px;
+  }
+  }
+}
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+   max-width: inherit !important;
+}
+
+//infowindow
+.location-title {
+  @include font-size(1.25);
+  color: $accent-color;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 0;
+  letter-spacing: 0.025em;
+}
+
+.location-description {
+  font-family: $base-font-family;
+  @include font-size(1);
+}
+
+.infopad {
+  padding: 1em;
+
+  .btn {
+    @include font-size(.75);
+  }
+}
+
+.location-address {
+  @include font-size(.875);
+}

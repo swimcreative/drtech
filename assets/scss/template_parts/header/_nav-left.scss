@@ -1,0 +1,12 @@
+//NAV LEFT
+.nav-left {
+  .site-navigation {
+    @media #{$tablet-up} {
+        flex-grow: 1;
+    }
+  }//.site-navigation
+
+  .site-description {
+      display: none !important;
+  }
+}

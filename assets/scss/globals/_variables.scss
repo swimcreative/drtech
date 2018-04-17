@@ -1,0 +1,87 @@
+//@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import 'assets/fonts/dcc_hardware/stylesheet.css';
+
+$hardware: 'ddc_hardware_regularregular';
+
+// Breakpoints
+$small-screen:480px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$xlarge-screen: 1280px;
+
+$xs-max: $small-screen - 1;
+$small-max: $medium-screen - 1;
+$medium-max: $large-screen - 1;
+$large-max: $xlarge-screen - 1;
+
+// Typography
+$font-stack-system: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+$base-font-family: $font-stack-system;
+$heading-font-family: $hardware;
+
+// Font Sizes
+$base-font-size: 16px;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1;
+
+// Other Sizes
+$base-border-radius: 5px;
+$base-geometric-border-radius: 50px;
+$base-square-border-radius: 0;
+$base-spacing: 20px; //$base-line-height * 1em;
+$small-spacing: ceil($base-spacing * .675);
+$base-z-index: 0;
+
+// Colors
+$blue: #3f9cdd;
+$orange: #ffa800;
+$dark-gray: #4b5963;
+$medium-gray: lighten($dark-gray,33);
+$light-gray: lighten($dark-gray,56);
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $blue;
+$accent-color: $orange;
+
+// Border
+$base-border-color: rgba($dark-gray,.125);
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: #fff;
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: .08s;
+$base-timing: ease-in-out;
+
+//TAILOR OVERRIDES
+
+//Media Queries
+$xs: "(max-width: $xs-max)" !default;
+$mobile: "(max-width: $small-max)" !default;
+$mobile-up: "(min-width:$small-screen)";
+$tablet: "(max-width: $medium-max)" !default;
+$tablet-up: "(min-width: $medium-screen)" !default;
+$desktop: "(max-width: $large-max)" !default;
+$desktop-up: "(min-width: $large-screen)" !default;
+$hd: "(min-width: $xlarge-screen)" !default;
+
+$global-spacing-vertical: $base-spacing !default;
+$global-spacing-horizontal: $base-spacing !default;
+$global-transition-duration: $base-duration !default;
+
+$global-primary-color: #0f95ee !default;
+$global-secondary-color: #a0a5aa !default;
+$global-text-color: #4b5963 !default;
+
+$global-border-color: $base-border-color !default;
+$global-border-radius: $base-border-radius !default;
+$global-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(0, 0, 0, 0.05) !default;

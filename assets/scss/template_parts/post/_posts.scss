@@ -1,0 +1,118 @@
+//posts
+.hentry {
+	margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing;
+
+  &.post {
+    border-bottom: $base-border;
+  }
+
+  &.sticky {
+  	display: block;
+  }
+}
+
+.entry-header {
+  margin-bottom: $base-spacing;
+
+  .single &,
+	.page & {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+  }
+
+  .single.has-post-thumbnail .hentry > &,
+	.page.has-post-thumbnail .hentry > & {
+      background-position: center;
+      background-size: cover;
+      color: white;
+      //add overlay for text/bkgd image readability
+      .entry-title,
+      .cat-link,
+      .entry-meta {
+        position: relative;
+        z-index: 1;
+      }
+			.entry-title {
+				width: 100%;
+				@extend .container;
+			}
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($dark-gray,.5);
+      }
+    }
+}//entry-header
+
+.entry-title {
+  margin: $small-spacing 0 0;
+
+  .single & {
+    @include padding(null 15px);
+    text-align: center;
+    @media #{$tablet-up} {
+      @include font-size(2.5);
+    }
+  }
+
+	.page &:not(h3) {
+		//text-align: center;
+		@media #{$tablet-up} {
+      @include font-size(4);
+    }
+	}
+}
+
+.cat-link {
+  @extend .btn;
+  padding: $small-spacing * .75;
+  @include font-size(.75);
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 0 0 $base-spacing;
+}
+
+//meta
+.entry-meta,
+.entry-footer,
+.comment-metadata,
+.logged-in-as,
+.comment-notes {
+  @include font-size(.875);
+
+  span[class*="link"] {
+    display: block;
+    margin-bottom: $small-spacing;
+  }
+
+  a:not(.btn) {
+    color: inherit;
+  }
+
+  .single & {
+    @include margin($base-spacing null);
+  }
+}//.entry-meta, etc

@@ -1,0 +1,29 @@
+.site-title,
+.custom-logo-link {
+  display: inline-block;
+  @include margin($base-spacing / 2.1 .5em null null);
+  @media #{$tablet-up} {
+    @include margin($base-spacing $base-spacing $base-spacing 0);
+  }
+  img {
+    padding:.5em 0;
+  }
+}
+
+.site-title {
+  @include font-size(1.5);
+  font-weight: 600;
+}
+
+.site-description {
+  display: none;
+  color: $medium-gray;
+  @media #{$desktop} {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.custom-logo-link {
+  line-height: 0;
+}

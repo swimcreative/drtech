@@ -1,0 +1,165 @@
+/*
+Theme Name: Sandbox
+Theme URI: http://template_parts.underscores.me/
+Author: Swim Creative
+Author URI: http://swimcreative.com
+Description: A monstrous WordPress starter theme.
+Version: 1.0.0 (Godzilla)
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sandbox
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+template_parts is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Accessibility
+# Alignments
+# Clearings
+# Typography
+# Forms
+# Buttons
+# Formatting
+# Lists
+# Tables
+# Navigation
+# Links
+# Layout
+	## Posts
+	## Pages
+# Comments
+# Widgets
+# Infinite scroll
+# Media
+	## Galleries
+# drtech
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "utilities/normalize";
+
+/*--------------------------------------------------------------
+#Prerequisites
+--------------------------------------------------------------*/
+@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "node_modules/flickity/css/flickity.css";
+@import "globals/variables";
+@import "utilities/mixins";
+
+@import 'assets/css/flickity.css';
+@import 'assets/css/lazyYT.css';
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+@import "utilities/utilities";
+
+//animations
+
+/**
+ * _animation.scss
+ * Custom WooCommerce Animations.
+ */
+@keyframes spin {
+	100% {
+		transform: rotate( 360deg );
+	}
+}
+
+//woocommerce mixin
+@mixin loader() {
+	&::before {
+		height: 1em;
+		width: 1em;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -0.5em;
+		margin-top: -0.5em;
+		content: '';
+		animation: spin 1s ease-in-out infinite;
+		background: url('assets/img/loader.svg') center center;
+		background-size: cover;
+		line-height: 1;
+		text-align: center;
+		font-size: 2em;
+		color: rgba(#000, 0.75);
+	}
+}
+
+/*--------------------------------------------------------------
+# Icons
+--------------------------------------------------------------*/
+@import "../fonts/genericons/genericons";
+
+/*--------------------------------------------------------------
+# Globals
+--------------------------------------------------------------*/
+@import "globals/base";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "template_parts/header/site-header";
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "template_parts/page/pages";
+
+/*--------------------------------------------------------------
+# Posts
+--------------------------------------------------------------*/
+@import "template_parts/post/posts";
+
+/*--------------------------------------------------------------
+# Posts Navigation
+--------------------------------------------------------------*/
+@import "template_parts/post/posts-navigation";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+@import "template_parts/comment/comments";
+
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+@import "template_parts/sidebar/sidebar";
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+@import "template_parts/footer/site-footer";
+
+/*--------------------------------------------------------------
+# Woocommerce
+--------------------------------------------------------------*/
+//@import "template_parts/woocommerce/woocommerce.scss";
+
+/*--------------------------------------------------------------
+# Page Builder
+--------------------------------------------------------------*/
+//@import "template_parts/acf/page-builder";
+
+/*--------------------------------------------------------------
+# Custom CSS
+--------------------------------------------------------------*/

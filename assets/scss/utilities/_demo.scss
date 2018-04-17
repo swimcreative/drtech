@@ -1,0 +1,13 @@
+.specimen-title {
+  @extend .h4;
+  @include margin($small-spacing * 4 null 0);
+  color: $medium-gray;
+
+  & + hr {
+    margin-top: $small-spacing;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}

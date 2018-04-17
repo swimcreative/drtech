@@ -1,0 +1,6 @@
+//TEXT WIDGET
+.widget_text {
+	& > .textwidget:first-child > *:first-child { //when widget title is hidden
+		margin-top: 0;
+	}
+}

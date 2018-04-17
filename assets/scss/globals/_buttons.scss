@@ -1,0 +1,59 @@
+#{$all-buttons},
+.btn,
+.button { //4 woocommerce
+  appearance: none;
+  background-color: $accent-color;
+  border: 0;
+  color: $base-font-color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing * 1.45 $base-spacing * 1.5 $base-spacing $base-spacing * 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing, color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  text-transform:uppercase;
+  white-space: nowrap;
+  font-family:$hardware;
+  font-size:1.1rem;
+  font-weight:400;
+  &:not(.search-submit):not(.menu-toggle) {
+    min-width:160px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+
+.ui-rounded & {
+  border-radius: $base-border-radius;
+}
+
+.ui-geometric & {
+  border-radius: $base-geometric-border-radius;
+}
+
+.ui-square & {
+  border-radius: $base-square-border-radius;
+}
+
+border-radius:3px !important;
+
+}

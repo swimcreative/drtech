@@ -1,0 +1,27 @@
+.site-morefoot {
+  padding-top: $base-spacing;
+  margin-bottom: $base-spacing;
+  margin-right: -($base-spacing);
+  margin-left: -($base-spacing);
+  border-bottom: $base-border;
+
+  .footer-widgets {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    @include margin(null auto);
+    max-width: $medium-screen * 2;
+  }
+
+  .widget {
+    @include padding(null $base-spacing $base-spacing);
+    margin-bottom: $base-spacing;
+    flex-basis: 100%;
+    @media #{$desktop} {
+      flex: 1;
+      flex-basis: auto;
+    }
+  }
+
+}//.site-contact

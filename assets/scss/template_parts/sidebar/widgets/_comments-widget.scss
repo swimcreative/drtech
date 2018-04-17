@@ -1,0 +1,18 @@
+//RECENT COMMENTS
+.widget_recent_comments {
+	& > ul {
+		li {
+			position: relative;
+			padding-left: 1.5em;
+			&:before {
+				display: inline-block;
+				content: '\f300';
+				font-family: 'Genericons';
+				position: absolute;
+				top: 1px;
+				left: 0;
+				color: gray;
+			}
+		}
+	}
+}

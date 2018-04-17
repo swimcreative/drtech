@@ -1,0 +1,272 @@
+//BASE SITE NAVIGATION
+.menu-toggle {
+    @include margin(null $base-spacing null auto);
+    @include padding(null ($small-spacing * 1.0625));
+    padding:$small-spacing;
+    @media #{$desktop-up} {
+        display: none !important;
+    }
+}
+
+.link-active {
+  color:$action-color;
+  text-decoration:underline;
+}
+
+.site-navigation {
+
+    @media #{$desktop-up} {
+      li {
+        //flex-basis:20%;
+        &:last-of-type {
+          .sub-menu {
+            left:auto;
+            right:0;
+          }
+        }
+      }
+    }
+    display: none;
+    flex-basis: 100%;
+    background-color: $action-color;
+    @include padding($small-spacing null);
+    @media #{$tablet} {
+      padding-top:0;
+      margin-left:-$base-spacing !important;
+      margin-right:-$base-spacing !important;
+    }
+
+    &.expanded {
+        display: none;
+    }
+    @media #{$desktop-up} {
+        flex-basis: auto;
+        display: block !important;
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+
+
+.main-menu {
+    font-family:$hardware;
+    @media #{$desktop-up} {
+      @include margin(null null null $base-spacing);
+      margin-left:0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      float:right;
+    }
+
+    li {
+        position: relative;
+        @media #{$desktop-up} {
+            display: inline-block;
+        }
+        .sub-menu {
+          a {
+            @media #{$tablet-up} and #{$desktop }{
+              padding:$small-spacing / 1.2 !important;
+            }
+          }
+        }
+
+        >  a {
+            padding:$small-spacing $base-spacing !important;
+            font-size:1rem;
+            @media #{$desktop} {
+            font-size:.9rem;
+            @media #{$tablet-up} {
+              padding-left:7px !important;
+              padding-right:7px !important;
+              }
+            }
+            @media #{$tablet} {
+              padding:$small-spacing $base-spacing !important;
+            }
+            display: block;
+            color: white;
+            @media #{$desktop-up} {
+              transition:background $base-timing $base-duration, color $base-timing $base-duration;
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                color: white !important;
+                background:darken($blue, 20%);
+            }
+            @media #{$desktop-up} {
+              @include padding($base-spacing $small-spacing);
+              color: $base-font-color;
+
+              &:active,
+              &:focus,
+              &:hover {
+                  color: shade($action-color, 25%);
+                  background:$blue;
+              }
+            }
+        }
+        &.current-menu-item > a {
+          @media #{$tablet} {
+            background:$orange;
+          }
+        }
+        &.current-menu-item > a,
+        &.current-page-ancestor > a {
+            color: white !important;
+            @media #{$desktop-up} {
+              background:$orange;
+              &:after {
+                border-color: white transparent transparent transparent !important;
+                //content:none !important;
+              }
+              //color: $dark-gray;
+            }
+        }
+
+        &:hover {
+            @media #{$desktop} {
+              background-color: darken($blue, 20%);
+            }
+            background:darken($blue, 15%);
+            @media #{$desktop-up} {
+              background-color: transparent;
+            }
+
+            .sub-menu {
+              display: block;
+              a:hover {
+                background:darken($blue, 15%);
+              }
+            }
+        }
+        &.menu-item-has-children {
+          > a {
+              @include caret;
+              @media #{$tablet} {
+                color:white;
+              }
+              color:$base-font-color;
+              &:hover {
+                &:after {
+                    border-color: white transparent transparent transparent;
+                }
+              }
+          }
+          &.current-menu-item {
+           >  a {
+              color:white !important;
+            }
+          }
+        }
+    }//li
+
+    .sub-menu {
+
+        display: none;
+
+        @media #{$desktop-up} {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            //transform: translateX(-50%);
+            background: $light-gray;
+            z-index: 9999;
+            //border: $base-border;
+            min-width:320px;
+
+            &:before {
+                position: absolute;
+                display: block;
+                content: '';
+                @include triangle(up, $light-gray, 22px);
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: '';
+                @include triangle(up, white, 18px);
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            li {
+                border-bottom: $base-border;
+                width:100%;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                > a {
+                    @include padding($small-spacing $base-spacing);
+                    min-width: $base-spacing * 8;
+                    width:100%;
+                    transition: color $base-timing $base-duration, background $base-timing $base-duration;
+                    &:hover {
+                      background:$blue;
+                      color:white;
+                    }
+                }
+            }
+        }
+    }//sub-menu
+}
+
+//top tablet nav
+.site-navigation {
+  @include clearfix;
+  @media #{$tablet} {
+    box-shadow:0px 10px 10px rgba(0,0,0,.2);
+  }
+  @media #{$desktop-up} {
+  display:flex;
+  align-items:center;
+  ul {
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    li {
+       flex: 1 0 auto;
+       text-align:center;
+       //flex-basis:20%;
+       .sub-menu {
+         li {
+           text-align:left;
+           a {
+             padding-left:$base-spacing * 1.2;
+           }
+         }
+       }
+      }
+    }
+  }
+  .tablet-top & {
+    order: 0;
+  }
+  @media #{$desktop-up} {
+    &,
+    .tablet-top & {
+      order: 1;
+    }
+  }
+}
+
+.hidden-tablet {
+  @media #{$tablet} {
+    display:none !important;
+  }
+}
+
+@import 'nav-right';
+@import 'nav-left';
+@import 'nav-center';
