@@ -17,7 +17,7 @@ if( have_rows('gallery')) : ?>
 		<div class="main-content">
 
 			<?php if( get_row_layout() == 'image' ): ?>
-			<li class="image main item"><a index="<?php echo $i; ?>" href="<?php echo get_sub_field('gallery_image')['url']; ?> ?>"><img src="<?php echo get_sub_field('gallery_image')['sizes']['large']; ?>"/></a></li>
+			<li class="image main item"><a index="<?php echo $i; ?>" href="<?php echo get_sub_field('gallery_image')['url']; ?> ?>"><img src="<?php echo get_sub_field('gallery_image')['sizes']['product-grid']; ?>"/></a></li>
 			<?php else : ?>
 			<?php $video_url = get_sub_field('gallery_video', false, false);
 			preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $video_url, $matches);

@@ -12,7 +12,7 @@
     @include clearfix;
   }
   ul {
-    font-size:1rem;
+    font-size:.9rem;
     text-transform:uppercase;
     padding-left:0;
     @include clearfix;
@@ -21,6 +21,8 @@
     li {
       &.item-home {
         margin-right:-4px;
+        position:relative;
+        bottom:2px;
       }
       &.separator {
         margin:0 .5em;
@@ -81,18 +83,25 @@
     font-weight:800;
   }
   @media #{$mobile} {
-    margin-bottom:-.2em;
+    margin-bottom:.75em;
+    line-height:1.2;
     .item-home {
       a {
         position:relative;
-        bottom:6px;
+        bottom:7px;
         .genericon:before {
           font-size:1rem;
         }
       }
     }
     * {
-      font-size:.85em;
+      font-size:.95em;
     }
   }
+}
+
+iframe {
+  border:8px solid $light-gray !important;
+  min-height:300px;
+  width:100%;
 }
