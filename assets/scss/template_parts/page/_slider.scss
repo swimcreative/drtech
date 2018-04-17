@@ -185,6 +185,7 @@ iframe {
 	transform: translate3d( -50%, -50%, 0 );
 }
 .lazy iframe {
+  border:none !important;
 	height: 100%;
 	width: 100%;
 	top: 0;

@@ -42,7 +42,7 @@ if( have_rows('gallery')) : ?>
 				?>
 			<li class="video item"><a index="<?php echo $i; ?>"href="#" data-attr="<?php echo $id; ?>"><img src="<?php echo 'https://img.youtube.com/vi/'.$id.'/default.jpg' ?>"/></a></li>
 			<?php else : ?>
-			<li class="image item"><a index="<?php echo $i; ?>" href="<?php echo get_sub_field('gallery_image')['url'];  ; ?>"><img src="<?php echo get_sub_field('gallery_image')['sizes']['thumbnail'];  ?>"/></a></li>
+			<li class="image item"><a index="<?php echo $i; ?>" href="<?php echo get_sub_field('gallery_image')['url'];  ; ?>"><img src="<?php echo get_sub_field('gallery_image')['sizes']['product-grid'];  ?>"/></a></li>
 		<?php endif; endif; $i++; endwhile; ?>
 
 		</ul>

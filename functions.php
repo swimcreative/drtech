@@ -65,26 +65,6 @@ if ( class_exists( 'acf' ) ) {
 	$drtech->acf = require 'inc/acf/acf.php';
 }
 
-/**
- * Custom post types & taxonomies
- */
-if ( class_exists( 'CPT' ) ) {
-  //cpt
-  $work = new CPT(
-    array(
-      'post_type_name' => 'slide',
-      'singular' => 'Slide',
-      'plural' => 'Slides',
-      'slug' => 'slide'
-    ),
-    array(
-      'supports' => array('title', 'editor', 'thumbnail'),
-      'menu_icon' => 'dashicons-images-alt',
-      'publicly_queryable' => false
-    )
-  );
-
-}
 
 // Remove each style one by one
 add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
