@@ -6,7 +6,8 @@
     }
     img {
       width:100%;
-      @media #{$mobile} {
+      @media #{$tablet} {
+      padding-top:2em;
       //  width:600px;
       //  margin-left:-45% !important;
       }

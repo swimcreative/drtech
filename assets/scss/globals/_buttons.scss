@@ -28,9 +28,10 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     background-color: shade($action-color, 20%);
-    color: #fff;
+    color: #fff !important;
   }
 
   &:disabled {

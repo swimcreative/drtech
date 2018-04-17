@@ -81,6 +81,7 @@
     font-weight:800;
   }
   @media #{$mobile} {
+    margin-bottom:-.2em;
     .item-home {
       a {
         position:relative;

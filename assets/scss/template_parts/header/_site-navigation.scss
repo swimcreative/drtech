@@ -67,6 +67,8 @@
         }
         .sub-menu {
           a {
+            background:darken($light-gray, 50%);
+            color:white;
             @media #{$tablet-up} and #{$desktop }{
               padding:$small-spacing / 1.2 !important;
             }
