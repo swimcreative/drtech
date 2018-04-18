@@ -238,6 +238,15 @@
     display:flex;
     justify-content: space-between;
     li {
+      &:hover {
+        > a {
+          background:$blue;
+          color:white;
+          &:after {
+            border-color:white transparent transparent transparent;
+          }
+        }
+      }
        flex: 1 0 auto;
        text-align:center;
        //flex-basis:20%;

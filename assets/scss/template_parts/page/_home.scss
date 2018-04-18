@@ -170,6 +170,8 @@
   background-image:url('assets/img/dot-bg.jpg');
   overflow:hidden;
   h2 {
+    max-width:$large-screen;
+    margin:0 auto;
     font-weight:300;
     font-family:$font-stack-system;
     line-height:1.3;
