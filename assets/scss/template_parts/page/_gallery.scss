@@ -7,7 +7,7 @@
   }
   pointer-events:none;
   @include pad();
-  @media #{$tablet} {
+  @media #{$mobile} {
     padding-top:0;
     padding-bottom:$small-spacing;
   }
