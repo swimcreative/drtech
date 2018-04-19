@@ -80,7 +80,12 @@
 }
 
 .flickity-prev-next-button {
-  transform:scale(2);
+  position:fixed;
+  transform:scale(1.5);
+  &:active,
+  &:focus {
+    background:none !important;
+  }
   &.previous {
     transform-origin:left center;
     left:0;
