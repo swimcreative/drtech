@@ -29,7 +29,7 @@
     .item {
       &:not(.lazy) {
       img {
-        display:block;
+        //display:block;
         max-height:70vh;
         width:auto;
         }
@@ -88,17 +88,18 @@
 .flickity-prev-next-button {
   position:fixed;
   transform:scale(1.2);
+  top:auto !important;
   &:active,
   &:focus {
     background:none !important;
   }
   &.previous {
-    transform-origin:left center;
-    left:$base-spacing;
+    transform-origin:left center !important;
+    //left:$base-spacing;
   }
   &.next {
-    transform-origin:right center;
-    right:$base-spacing;
+    transform-origin:right center !important;
+    //right:$base-spacing;
   }
   //position:fixed;
   @media #{$tablet} {
@@ -106,7 +107,7 @@
     bottom:auto;
     margin:0 !important;
     transform:scale(1.5);
-    transform-origin:center bottom !important;
+   transform-origin:center bottom !important;
   }
   z-index:9999;
   &:hover {
@@ -138,10 +139,12 @@ iframe {
 }
 
 .fluid-width-video-wrapper {
-//  @media #{$mobile-up} {
+  padding-top:50% !important;
+  padding-bottom:50% !important;
+  @media #{$mobile-up} {
     padding-top: 75% !important;
-//  }
-  //padding-top:54.3% !important;
+    padding-bottom:0 !important;
+  }
 }
 
 
