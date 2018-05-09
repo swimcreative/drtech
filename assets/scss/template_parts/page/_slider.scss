@@ -29,6 +29,7 @@
     .item {
       &:not(.lazy) {
       img {
+        display:block;
         max-height:70vh;
         width:auto;
         }
