@@ -124,3 +124,25 @@ $large: $base-measure * 2;
     flex-basis:100%;
   }
 }
+
+// pseudo width
+@mixin pseudo_width($color: inherit) {
+  position:relative;
+  &:before,
+  &:after {
+    content:'';
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100vw;
+    background:$color;
+    display:block;
+    z-index:99;
+  }
+  &:before {
+    right:100%;
+  }
+  &:after {
+    left:100%;
+  }
+}

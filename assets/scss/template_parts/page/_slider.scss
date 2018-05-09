@@ -29,13 +29,13 @@
     .item {
       &:not(.lazy) {
       img {
-        max-height:80vh;
+        max-height:70vh;
         width:auto;
         }
       }
       width:auto;
       @media #{$mobile-up} {
-        max-width:70vh;
+        max-width:80%;
         width:100%;
       }
     //  max-height:75%;
@@ -45,6 +45,11 @@
     //  padding-right:$base-spacing;
       iframe {
 
+      }
+      &.lazy {
+        max-width:700px;
+        width:100%;
+        height:auto;
       }
     }
 }
@@ -81,18 +86,18 @@
 
 .flickity-prev-next-button {
   position:fixed;
-  transform:scale(1.5);
+  transform:scale(1.2);
   &:active,
   &:focus {
     background:none !important;
   }
   &.previous {
     transform-origin:left center;
-    left:0;
+    left:$base-spacing;
   }
   &.next {
     transform-origin:right center;
-    right:0;
+    right:$base-spacing;
   }
   //position:fixed;
   @media #{$tablet} {
@@ -132,7 +137,10 @@ iframe {
 }
 
 .fluid-width-video-wrapper {
-  padding-top:75% !important;
+//  @media #{$mobile-up} {
+    padding-top: 75% !important;
+//  }
+  //padding-top:54.3% !important;
 }
 
 
@@ -140,9 +148,12 @@ iframe {
 	//background-color: #000;
 	margin-bottom: 30px;
 	position: absolute;
-	padding-top: 75%;
-	overflow: hidden;
+//  top:50%;
+	//padding-top: 75%;
+  //padding-bottom:38%;
+	//overflow: hidden;
 	cursor: pointer;
+  border:none !important;
 
   &:hover {
     .play-button {
@@ -189,10 +200,7 @@ iframe {
 	left: 50%;
 	transform: translate3d( -50%, -50%, 0 );
 }
+
 .lazy iframe {
   border:none !important;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
 }

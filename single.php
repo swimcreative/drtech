@@ -35,7 +35,7 @@ get_header(); ?>
 	</div>
 <?php
 // Add a sidebar layout
-if( get_theme_mod('drtech_sidebar') == true ) {
+//if( get_theme_mod('drtech_sidebar') == true ) {
 	get_sidebar();
-}
+//}
 get_footer();

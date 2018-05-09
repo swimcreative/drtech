@@ -10,8 +10,19 @@
 
 body:not(.layout-sidebar) {
 	.comments-area {
-		width: 100vw;
 		background-color: $light-gray;
+	}
+}
+
+.single {
+	#content #primary {
+		#comments {
+			position:relative;
+			@include pseudo_width;
+		}
+		width:100%;
+		max-width:100%;
+		flex-basis:100%;
 	}
 }
 

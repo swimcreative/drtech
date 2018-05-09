@@ -728,7 +728,7 @@ $(window).resize( resizeVideo );
 							this.innerHTML = "";
 							this.appendChild( iframe );
 
-            $(this).parents().fitVids();
+            $('iframe').parent().fitVids();
             $(this).css('padding','0');
 				       } );
 
@@ -799,7 +799,8 @@ $(window).resize( resizeVideo );
   });
 
   $(window).resize(function() {
-    //drtech.fitVideos();
+      drtech.fitVideos();
+      $('iframe').parent().fitVids();
   });
 
   $(window).scroll(function() {
